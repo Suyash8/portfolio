@@ -1,16 +1,6 @@
 import type { Metadata } from "next";
-import { Inter, Montserrat } from "next/font/google";
 import "./globals.css";
-
-const inter = Inter({
-  variable: "--font-sans",
-  subsets: ["latin"],
-});
-
-const montserrat = Montserrat({
-  variable: "--font-heading",
-  subsets: ["latin"],
-});
+import { Providers } from "@/app/providers";
 
 export const metadata: Metadata = {
   title: "Suyash Sharma - Next.js & Web3 Developer Portfolio",
@@ -26,10 +16,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${inter.variable} ${montserrat.variable} bg-background text-foreground dark`}
-      >
-        {children}
+      <body className={`bg-background text-foreground dark`}>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
