@@ -91,14 +91,33 @@ const NavBar = () => {
     }
   }, [pathname, isHomePage, mounted]);
 
+  // Control body scroll when mobile menu is open
+  useEffect(() => {
+    if (showMobileMenu) {
+      // Prevent body scrolling when menu is open
+      document.body.style.overflow = "hidden";
+    } else {
+      // Re-enable scrolling when menu is closed
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = ""; // Cleanup
+    };
+  }, [showMobileMenu]);
+
   return (
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-40 transition-all duration-300",
-        scrolled ? "py-3 glass" : "py-6 bg-transparent"
+        scrolled
+          ? !showMobileMenu
+            ? "py-3 glass"
+            : "py-3 md:glass"
+          : "py-6 bg-transparent"
       )}
     >
-      <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
+      <div className="container mx-auto px-4 md:px-6 flex items-center justify-between relative">
         <div className="flex items-center gap-2 z-20">
           <Link href="/" className="text-2xl font-bold text-gradient">
             Suyash Sharma
@@ -145,39 +164,37 @@ const NavBar = () => {
           )}
         </button>
 
-        {/* Mobile Navigation */}
-        <div
-          className={`fixed inset-0 z-10 glass md:hidden transition-all duration-300 ${
-            showMobileMenu ? "opacity-100" : "opacity-0 pointer-events-none"
-          }`}
-        >
-          <div className="flex flex-col items-center justify-center h-full gap-6">
-            {navigation.map((item) => {
-              const isActive = isHomePage
-                ? activeSection === item.href.split("#")[1]
-                : item.href === "/"
-                ? pathname === "/"
-                : item.href.includes(activeSection);
+        {/* Mobile Navigation - With glass effect */}
+        {showMobileMenu && (
+          <div className="fixed top-0 left-0 right-0 w-full h-screen glass z-10 flex items-center justify-center">
+            <div className="flex flex-col items-center justify-center gap-6">
+              {navigation.map((item) => {
+                const isActive = isHomePage
+                  ? activeSection === item.href.split("#")[1]
+                  : item.href === "/"
+                  ? pathname === "/"
+                  : item.href.includes(activeSection);
 
-              return (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  onClick={() => setShowMobileMenu(false)}
-                  className={cn(
-                    "px-5 py-3 rounded-lg text-xl flex items-center gap-3 transition-all duration-300",
-                    isActive
-                      ? "text-white bg-white/10"
-                      : "text-muted-foreground hover:text-white hover:bg-white/5"
-                  )}
-                >
-                  <item.icon size={22} />
-                  <span>{item.name}</span>
-                </Link>
-              );
-            })}
+                return (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    onClick={() => setShowMobileMenu(false)}
+                    className={cn(
+                      "px-5 py-3 rounded-lg text-xl flex items-center gap-3 transition-all duration-300",
+                      isActive
+                        ? "text-white bg-white/10"
+                        : "text-muted-foreground hover:text-white hover:bg-white/5"
+                    )}
+                  >
+                    <item.icon size={22} />
+                    <span>{item.name}</span>
+                  </Link>
+                );
+              })}
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </header>
   );
