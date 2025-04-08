@@ -139,8 +139,8 @@ const FullStackDevelopment = () => {
                 Need a complete solution?
               </h3>
               <p className="text-gray-300 mb-6">
-                Let's discuss your project requirements and how I can deliver a
-                full-stack solution that meets all your needs.
+                Let&apos;s discuss your project requirements and how I can
+                deliver a full-stack solution that meets all your needs.
               </p>
 
               <Link href="/contact">

@@ -209,8 +209,8 @@ const PerformanceOptimization = () => {
                 Need performance improvements?
               </h3>
               <p className="text-gray-300 mb-6">
-                Let's discuss how I can help optimize your web application for
-                better performance and user experience.
+                Let&apos;s discuss how I can help optimize your web application
+                for better performance and user experience.
               </p>
 
               <Link href="/contact">

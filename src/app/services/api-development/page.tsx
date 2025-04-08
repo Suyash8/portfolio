@@ -171,7 +171,7 @@ const ApiDevelopment = () => {
                 Need API development?
               </h3>
               <p className="text-gray-300 mb-6">
-                Let's discuss your integration needs and how I can create
+                Let&apos;s discuss your integration needs and how I can create
                 reliable API solutions for your business.
               </p>
 

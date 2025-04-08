@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Github, Linkedin, Mail, Calendar, ArrowRight } from "lucide-react";
+import { Github, Linkedin, Mail, Calendar } from "lucide-react";
 import { personalInfo } from "@/config/personalInfo";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";

@@ -25,7 +25,7 @@ const ContactSection = () => {
           </h2>
           <p className="text-xl text-gray-300 mb-8">
             Have a project in mind or want to discuss potential opportunities?
-            I'd love to hear from you!
+            I&apos;d love to hear from you!
           </p>
           <Link href="/contact">
             <Button className="bg-electric-blue hover:bg-royal-purple text-white font-medium px-8 py-6 rounded-md transition-all duration-300 text-lg">

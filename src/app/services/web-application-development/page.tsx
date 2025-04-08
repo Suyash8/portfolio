@@ -170,8 +170,8 @@ const WebAppDevelopment = () => {
                 Ready to start your project?
               </h3>
               <p className="text-gray-300 mb-6">
-                Let's discuss how I can help you create a custom web application
-                that meets your specific needs.
+                Let&apos;s discuss how I can help you create a custom web
+                application that meets your specific needs.
               </p>
 
               <Link href="/contact">

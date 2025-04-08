@@ -1,6 +1,4 @@
 import React, { ReactNode } from "react";
-import NavBar from "@/components/navbar";
-import Footer from "@/components/footer";
 import { motion } from "framer-motion";
 
 interface PageLayoutProps {

@@ -2,16 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
-import {
-  Menu,
-  X,
-  Code,
-  User,
-  Briefcase,
-  Mail,
-  Home,
-  ArrowLeft,
-} from "lucide-react";
+import { Menu, X, Code, Briefcase, Mail, Home, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 

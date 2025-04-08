@@ -134,8 +134,8 @@ const Web3Integration = () => {
             <CardContent className="pt-6">
               <h3 className="text-xl font-medium mb-4">Ready to go Web3?</h3>
               <p className="text-gray-300 mb-6">
-                Let's discuss how blockchain technology can add value to your
-                application and create new possibilities for your users.
+                Let&apos;s discuss how blockchain technology can add value to
+                your application and create new possibilities for your users.
               </p>
 
               <Link href="/contact">

@@ -169,8 +169,8 @@ const SmartContractDevelopment = () => {
                 Need smart contracts?
               </h3>
               <p className="text-gray-300 mb-6">
-                Let's discuss your project requirements and how we can implement
-                them securely on-chain.
+                Let&apos;s discuss your project requirements and how we can
+                implement them securely on-chain.
               </p>
 
               <Link href="/contact">

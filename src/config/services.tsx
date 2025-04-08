@@ -1,5 +1,4 @@
 import {
-  Code,
   Globe,
   Server,
   Layers,
