@@ -35,36 +35,30 @@ const ContactForm = () => {
     setIsSubmitting(true);
 
     try {
-      // Simulate a delay as if we're sending to a backend
-      await new Promise((resolve) => setTimeout(resolve, 800));
+      // Send data to our new API endpoint
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-      // Save the contact to localStorage for demo purposes
-      try {
-        const contacts = JSON.parse(localStorage.getItem("contacts") || "[]");
-        contacts.push({
-          ...formData,
-          id: Date.now(),
-          date: new Date().toISOString(),
-        });
-        localStorage.setItem("contacts", JSON.stringify(contacts));
+      const data = await response.json();
 
-        // Log the saved contact information to the console
-        console.log("Contact form data saved:", formData);
-
-        toast.success("Message received! I'll get back to you soon.", {
-          position: "top-center",
-        });
-        setFormData({ name: "", email: "", message: "" });
-      } catch (storageError) {
-        console.error("Error saving to localStorage:", storageError);
-        // If localStorage fails, still show success message to user
-        toast.success("Message received! I'll get back to you soon.", {
-          position: "top-center",
-        });
-        setFormData({ name: "", email: "", message: "" });
+      if (!response.ok) {
+        throw new Error(data.error || "Something went wrong");
       }
+
+      // Show success message
+      toast.success("Message received! I'll get back to you soon.", {
+        position: "top-center",
+      });
+
+      // Reset form
+      setFormData({ name: "", email: "", message: "" });
     } catch (error) {
-      console.error("Error processing contact form:", error);
+      console.error("Error submitting contact form:", error);
       toast.error("Something went wrong. Please try again later.", {
         position: "top-center",
       });
