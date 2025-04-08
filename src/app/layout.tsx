@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Providers } from "@/app/providers";
+import NavBar from "@/components/navbar";
 
 export const metadata: Metadata = {
   title: "Suyash Sharma - Next.js & Web3 Developer Portfolio",
@@ -17,7 +18,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`bg-background text-foreground dark`}>
-        <Providers>{children}</Providers>
+        <Providers>
+          <NavBar />
+          {children}
+        </Providers>
       </body>
     </html>
   );
