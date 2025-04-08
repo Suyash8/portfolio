@@ -47,15 +47,15 @@ const NavBar = () => {
     // Service page navigation
     navigation = [
       { name: "Back to Home", href: "/", icon: ArrowLeft },
-      { name: "All Services", href: "/#services", icon: Briefcase },
+      { name: "All Services", href: "/services", icon: Briefcase },
       { name: "Contact", href: "/contact", icon: Mail },
     ];
   } else {
     // Default navigation for other pages
     navigation = [
-      { name: "Home", href: "/", icon: Home },
-      { name: "Skills", href: "/#skills", icon: Code },
-      { name: "Services", href: "/#services", icon: Briefcase },
+      { name: "Home", href: "/", icon: ArrowLeft },
+      // { name: "Skills", href: "/#skills", icon: Code },
+      { name: "Services", href: "/services", icon: Briefcase },
       { name: "Contact", href: "/contact", icon: Mail },
     ];
   }
