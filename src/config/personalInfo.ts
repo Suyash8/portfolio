@@ -7,9 +7,9 @@ export const personalInfo = {
   // Social links
   social: {
     github: "https://github.com/Suyash8",
-    linkedin: "https://linkedin.com",
-    calendly: "https://calendly.com",
-    twitter: "https://twitter.com",
+    linkedin: "https://www.linkedin.com/in/suyash-sharma-31359a27a",
+    calendly: "https://calendly.com/sharmasuyash821/30min",
+    twitter: "https://x.com/illionode",
     instagram: "https://instagram.com",
   },
 
