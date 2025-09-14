@@ -19,7 +19,7 @@ export default function RedirectPage({
         // Validate if the URL is well-formed before redirecting.
         new URL(url);
         window.location.href = url;
-      } catch (error) {
+      } catch {
         // If the URL is malformed, log an error and do not redirect.
         console.error("Invalid URL for redirection:", url);
       }
