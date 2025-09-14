@@ -1,13 +1,15 @@
 import { redirect } from "next/navigation";
 
-export default function RedirectPage({
-  searchParams,
-}: {
-  searchParams: { url?: string };
-}) {
-  if (!searchParams.url) {
-    return <p>No URL provided</p>;
+type PageProps = {
+  searchParams: { [key: string]: string | string[] | undefined };
+};
+
+export default function RedirectPage({ searchParams }: PageProps) {
+  const url = searchParams.url;
+
+  if (!url || Array.isArray(url)) {
+    return <p>No valid URL provided</p>;
   }
 
-  redirect(searchParams.url);
+  redirect(url);
 }
